@@ -47,11 +47,11 @@ jobs:
           EOF
 
       - name: Build debug APK
-        run: chmod +x gradlew && ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Build release APK
         if: startsWith(github.ref, 'refs/tags/v')
-        run: chmod +x gradlew && ./gradlew assembleRelease
+        run: ./gradlew assembleRelease
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
