@@ -20,6 +20,7 @@ import com.apk.claw.android.base.BaseActivity
 import com.apk.claw.android.service.ClawAccessibilityService
 import com.apk.claw.android.ui.guide.GuideActivity
 import com.apk.claw.android.ui.settings.SettingsActivity
+import com.apk.claw.android.ui.skills.SkillsActivity
 import com.apk.claw.android.utils.KVUtils
 import com.apk.claw.android.widget.CommonToolbar
 import com.apk.claw.android.widget.PermissionCardView
@@ -117,6 +118,10 @@ class HomeActivity : BaseActivity() {
             setOnItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.nav_home -> true
+                    R.id.nav_skills -> {
+                        startActivity(Intent(this@HomeActivity, SkillsActivity::class.java))
+                        true
+                    }
                     R.id.nav_settings -> {
                         startActivity(Intent(this@HomeActivity, SettingsActivity::class.java))
                         true

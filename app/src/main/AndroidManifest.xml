@@ -73,6 +73,10 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.skills.SkillsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.web.WebActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
