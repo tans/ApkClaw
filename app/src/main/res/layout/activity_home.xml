@@ -80,6 +80,17 @@
         android:visibility="gone"
         app:btnBackground="@color/colorErrorPrimary"
         app:btnTextColor="@color/colorErrorOnPrimary"
-        app:layout_constraintTop_toBottomOf="@id/cardStorage" />
+        app:layout_constraintTop_toBottomOf="@id/cardStorage"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation" />
+
+    <!-- 底部导航栏 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="56pt"
+        android:background="@color/colorBgPrimary"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

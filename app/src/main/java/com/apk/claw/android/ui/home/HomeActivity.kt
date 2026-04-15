@@ -25,6 +25,7 @@ import com.apk.claw.android.widget.CommonToolbar
 import com.apk.claw.android.widget.PermissionCardView
 import com.apk.claw.android.widget.KButton
 import androidx.core.net.toUri
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
  * 首页 - 权限管理
@@ -109,8 +110,19 @@ class HomeActivity : BaseActivity() {
         findViewById<CommonToolbar>(R.id.toolbar).apply {
             setTitleCentered(false)
             setTitle(getString(R.string.app_name))
-            setActionIcon(R.drawable.ic_settings) {
-                startActivity(Intent(this@HomeActivity, SettingsActivity::class.java))
+        }
+
+        // 底部导航
+        findViewById<BottomNavigationView>(R.id.bottomNavigation).apply {
+            setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.nav_home -> true
+                    R.id.nav_settings -> {
+                        startActivity(Intent(this@HomeActivity, SettingsActivity::class.java))
+                        true
+                    }
+                    else -> false
+                }
             }
         }
 
